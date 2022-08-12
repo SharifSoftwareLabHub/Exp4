@@ -25,4 +25,16 @@ public class GardenTest {
         Assert.assertTrue(iranianGardenCreator.createFlower() instanceof LalehFlower);
         Assert.assertTrue(iraqGardenCreator.createFlower() instanceof VardahFlower);
     }
+
+    @Test
+    public void smellFlowerTest(){
+        Tree iranTree = iranianGardenCreator.createTree();
+        Tree iraqTree = iraqGardenCreator.createTree();
+        Flower iraqFlower = iraqGardenCreator.createFlower();
+        Flower iranFlower = iranianGardenCreator.createFlower();
+        Assert.assertEquals("Laleh Smell!",iranFlower.getSmell());
+        Assert.assertEquals("Vardeh Smell!",iraqFlower.getSmell());
+        Assert.assertEquals("Shajarah Fruit" ,iraqTree.getFruit());
+        Assert.assertEquals("Sarv Fruit",iranTree.getFruit());
+    }
 }
